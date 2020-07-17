@@ -1,0 +1,211 @@
+assignment 01
+A)
+
+create database assignment;
+use assignment;
+
+create table SALESPEOPLE
+(
+SNUM int(4),
+ SNAME varchar(10),
+CITY varchar(10),
+ COMM float(3,2)
+);
+insert into SALESPEOPLE(SNUM,SNAME,CITY,COMM)
+value(1001,'Peel','London', 0.12);
+
+insert into SALESPEOPLE(SNUM,SNAME,CITY,COMM)
+value(1002,'Serres','San Jose', 0.13);
+
+insert into SALESPEOPLE(SNUM,SNAME,CITY,COMM)
+value(1004,'Motika','London', 0.11);
+
+insert into SALESPEOPLE(SNUM,SNAME,CITY,COMM)
+value(1007,'Rifkin','Barcelona', 0.15);
+
+insert into SALESPEOPLE(SNUM,SNAME,CITY,COMM)
+value(1003,'Axelrod','NewYork', 0.10);
+
+B)
+
+create table CUSTOMERS
+(
+CNUM int(4),
+CNAME varchar(10),
+CITY varchar(10),
+RATING int(4),
+SNUM int(4)
+);
+
+insert into CUSTOMERS(CNUM,CNAME,CITY,RATING,SNUM)
+value(2001,'Hoffman','London', 100,1001);
+
+insert into CUSTOMERS(CNUM,CNAME,CITY,RATING,SNUM)
+value(2002,'Giovanni','Rome',200,1003);
+
+insert into CUSTOMERS(CNUM,CNAME,CITY,RATING,SNUM)
+value(2003,'Liu','San Jose',200,1002);
+
+insert into CUSTOMERS(CNUM,CNAME,CITY,RATING,SNUM)
+value(2004,'Grass','Berlin',300,1002);
+
+insert into CUSTOMERS(CNUM,CNAME,CITY,RATING,SNUM)
+value(2006,'Clemens','London',100,1001);
+
+
+insert into CUSTOMERS(CNUM,CNAME,CITY,RATING,SNUM)
+value(2008,'Cisneros','San Jose',300,1007);
+
+
+insert into CUSTOMERS(CNUM,CNAME,CITY,RATING,SNUM)
+value(2007,'Pereira','Rome',100,1004);
+
+C)
+
+create table ORDERS
+(
+ONUM int(4),
+AMT float(7,2),
+ODATE date,
+CNUM int(4),
+SNUM int(4)
+);
+
+
+insert into ORDERS(ONUM,AMT,ODATE,CNUM,SNUM)
+value(3001,18.69,'1990-10-03',2008,1007);
+
+insert into ORDERS(ONUM,AMT,ODATE,CNUM,SNUM)
+value(3003,767.19,'1990-10-03',2001,1001);
+
+insert into ORDERS(ONUM,AMT,ODATE,CNUM,SNUM)
+value(3002,1900.10,'1990-10-03',2007,1004);
+
+insert into ORDERS(ONUM,AMT,ODATE,CNUM,SNUM)
+value(3005,5160.45,'1990-10-03',2003,1002);
+
+insert into ORDERS(ONUM,AMT,ODATE,CNUM,SNUM)
+value(3006,1098.16,'1990-10-03',2008,1007);
+
+insert into ORDERS(ONUM,AMT,ODATE,CNUM,SNUM)
+value(3009,1713.23,'1990-10-04',2002,1003);
+
+insert into ORDERS(ONUM,AMT,ODATE,CNUM,SNUM)
+value(3007,75.75,'1990-10-04',2004,1002);
+
+insert into ORDERS(ONUM,AMT,ODATE,CNUM,SNUM)
+value(3008,4723.00,'1990-10-05',2006,1001);
+
+insert into ORDERS(ONUM,AMT,ODATE,CNUM,SNUM)
+value(3010,1309.95,'1990-10-06',2004,1002);
+
+
+insert into ORDERS(ONUM,AMT,ODATE,CNUM,SNUM)
+value(3011,9891.88,'1990-10-06',2006,1001);
+
+EXERCISE 1
+
+create table SEMP
+(
+EMPNO CHAR(4),
+EMPNAME CHAR(20),
+BASIC FLOAT(9,2),
+DEPTNO CHAR(2),
+DEPTHEAD CHAR(4) 
+);
+
+create table SDEPT
+(
+DEPTNO CHAR(2),
+DEPTNAME CHAR(15)
+);
+
+
+ insert into SDEPT(DEPTNO,DEPTNAME)
+ values('10','Development');
+
+ insert into SDEPT(DEPTNO,DEPTNAME)
+ values('20','Training');
+
+
+insert into SEMP(EMPNO,EMPNAME,BASIC,DEPTNO,DEPTHEAD)
+values('0001','SUNIL',6000.00,'10',NULL);
+
+insert into SEMP(EMPNO,EMPNAME,BASIC,DEPTNO,DEPTHEAD)
+values('0002','HIREN',8000.00,'20',NULL);
+
+insert into SEMP(EMPNO,EMPNAME,BASIC,DEPTNO,DEPTHEAD)
+values('0003','ALI',4000.00,'10',0001);
+
+insert into SEMP(EMPNO,EMPNAME,BASIC,DEPTNO,DEPTHEAD)
+values('0004','GEORGE',6000.00,NULL,0002);
+
+2)
+
+create table SUPPLIER
+(
+`S#` char(4),
+ Sname char(10),
+ Status int(10),
+ City char(15)
+ );
+
+create table PARTS
+(
+`P#` char(4),
+ Pname char(10),
+ Color char(10),
+ weight int(10),
+ City char(15)
+ );
+
+create table PROJECTS
+(
+`J#` char(4),
+ Jname char(10),
+ City char(15)
+ );
+
+create table SUPPLIER_PARTS_PROJECTS
+(
+`S#` char(4),
+`P#` char(4),
+`J#` char(4),
+ Qty int(10)
+ );
+
+Insert into supplier values ( 's1','rajat',10,'London');
+
+Insert into supplier values ( 's2','shruti',20,'paris');
+
+Insert into supplier values ( 's3','jagdish',10,'Athens');
+
+
+Insert into PARTS values ( 'p1','light','yellow',2,'London');
+
+Insert into PARTS values ( 'p2','body','grey',20,'paris');
+
+Insert into PARTS values ( 'p3','seatcover','black',3,'Athens');
+
+Insert into PROJECTS values ( 'j1','swift','London');
+
+Insert into PROJECTS values ( 'j2','jaguar','paris');
+
+Insert into PROJECTS values ( 'j3','Audi','Athens');
+
+select * from SUPPLIER;
+
+SELECT 'S#', Sname FROM SUPPLIER;
+
+SELECT Pname, color from PARTS where city='London';
+
+SELECT * FROM SUPPLIER where city='London';
+
+SELECT * FROM SUPPLIER where city='London' OR city='Athens';
+
+SELECT * FROM Supplier
+WHERE City='London' OR City='Athens';
+
+SELECT * FROM Projects where city='Athens';
+
+
