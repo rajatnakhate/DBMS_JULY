@@ -1,0 +1,9 @@
+			assignment-3
+
+1)Does ANSI recognize the data type DATE?
+
+ans- yes The default string literal format, which is used for down-level clients complies with the SQL standard form that is defined as YYYY-MM-DD.
+
+2) Which subdivision of SQL is used to insert values in tables?
+
+ans-DATA MANIPULATION LANGAUAGE subdivision is use to insert values in tables
