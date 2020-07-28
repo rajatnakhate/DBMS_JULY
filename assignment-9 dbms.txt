@@ -1,0 +1,65 @@
+			assignment-9
+
+1) Write a query that lists each order number followed by the name of the customer 
+who made the order.
+
+ans- select onum,cname from orders,customers where orders.cnum = customers.cnum;
++------+----------+
+| onum | cname    |
++------+----------+
+| 3003 | Hoffman  |
+| 3005 | Liu      |
+| 3007 | Grass    |
+| 3010 | Grass    |
+| 3008 | Clemens  |
+| 3011 | Clemens  |
+| 3002 | Pereira  |
+| 3001 | Cisneros |
+| 3006 | Cisneros |
+| 3009 | Cisneros |
++------+----------+
+
+2) Write a query that gives the names of both the salesperson and the customer for each order along with the order number.
+
+ans- select sname,cname,onum from salespeople,customers,orders where orders.cnum = customers.cnum and orders.snum = salespeople.snum;
++--------+----------+------+
+| sname  | cname    | onum |
++--------+----------+------+
+| Peel   | Hoffman  | 3003 |
+| Peel   | Clemens  | 3008 |
+| Peel   | Clemens  | 3011 |
+| serres | Liu      | 3005 |
+| serres | Grass    | 3007 |
+| serres | Grass    | 3010 |
+| motika | Pereira  | 3002 |
+| rifkin | Cisneros | 3001 |
+| rifkin | Cisneros | 3006 |
+| rifkin | Cisneros | 3009 |
++--------+----------+------+
+
+3) Write a query that produces all customers serviced by salespeople with a 
+commission above 12%. Output the customer’s name, the salesperson’s name, 
+and the salesperson’s rate of commission.
+
+ans- select cname,sname, comm from customers,salespeople where customers.snum = salespeople.snum and comm > 0.12;
++----------+--------+------+
+| cname    | sname  | comm |
++----------+--------+------+
+| Liu      | serres | 0.13 |
+| Grass    | serres | 0.13 |
+| Cisneros | rifkin | 0.15 |
++----------+--------+------+
+
+4) Write a query that calculates the amount of the salesperson’s commission on each order by a customer with a rating above 100.
+
+ans- select onum, amt*comm as commission from orders,customers,salespeople where orders.cnum = customers.cnum and orders.snum = salespeople.snum and rating > 100;
++------+------------+
+| onum | commission |
++------+------------+
+| 3005 |     670.86 |
+| 3007 |       9.85 |
+| 3010 |     170.29 |
+| 3001 |       2.80 |
+| 3006 |     164.72 |
+| 3009 |     256.98 |
++------+------------+
