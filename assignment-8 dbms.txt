@@ -1,0 +1,59 @@
+			assignment-8
+
+1) Assume each salesperson has a 12% commission. Write a query on the orders 
+table that will produce the order number, the salesperson number, and the amount 
+of the salesperson’s commission for that order.
+
+ans-select onum,orders.snum,amt*comm as commission from salespeople,orders where salespeople.snum = orders.snum;
++------+------+------------+
+| onum | snum | commission |
++------+------+------------+
+| 3003 | 1001 |      92.06 |
+| 3008 | 1001 |     566.76 |
+| 3011 | 1001 |    1187.03 |
+| 3005 | 1002 |     670.86 |
+| 3007 | 1002 |       9.85 |
+| 3010 | 1002 |     170.29 |
+| 3002 | 1004 |     209.01 |
+| 3001 | 1007 |       2.80 |
+| 3006 | 1007 |     164.72 |
+| 3009 | 1007 |     256.98 |
++------+------+------------+
+
+2) Write a query on the Customers table that will find the highest rating in each city. 
+Put the output in this form: For the city (city), the highest rating is : (rating).
+
+ans- select concat('for the ciry','(',city,')',' ','the highest rating is :','(',max(rating),')') as highestrating from customers;
++---------------------------------------------------+
+| highestrating                                     |
++---------------------------------------------------+
+| for the ciry(London) the highest rating is :(300) |
++---------------------------------------------------+
+
+3) Write a query that lists customers in descending order of rating. Output the rating field first, followed by the customer’s name and number.
+
+ans-select rating, cname,cnum from customers order by rating desc;
+--------+----------+------+
+| rating | cname    | cnum |
++--------+----------+------+
+|    300 | Grass    | 2004 |
+|    300 | Cisneros | 2008 |
+|    200 | Giovanni | 2002 |
+|    200 | Liu      | 2003 |
+|    100 | Hoffman  | 2001 |
+|    100 | Clemens  | 2006 |
+|    100 | Pereira  | 2007 |
++--------+----------+------+
+
+4) Write a query that totals the orders for each day and places the results in 
+descending order.
+
+ans-  select odate,sum(amt) from orders group by odate order by sum(amt) desc;
++------------+----------+
+| odate      | sum(amt) |
++------------+----------+
+| 1990-10-06 | 11201.83 |
+| 1990-10-03 |  8944.59 |
+| 1990-10-05 |  4723.00 |
+| 1990-10-04 |  1788.98 |
++------------+----------+
