@@ -1,5 +1,3 @@
-﻿
-
 Assignment 16 :-
 
 1) Write a command that will enable a user to pull orders grouped by date out of the Orders table quickly.
