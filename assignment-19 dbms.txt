@@ -1,0 +1,17 @@
+﻿
+1) Create a view that shows all of the customers who have the highest ratings.
+Ans: create view vc2 as select cname,rating from customers; 
+        select cname from vc2 where rating=(select max(rating)         from vc2);
+
+2) Create a view that shows the number of salespeople in each city.
+
+Ans:  create view vs1 as select snum,sname,city from                  salespeople;
+         select city,count(city) "No. of salespeople" from vs1 group           by city;
+
+3) Create a view that shows the average and total orders for each salesperson after his or her name. Assume all names are unique.
+
+Ans:  create view vo2 as select sname,avg(onum)AVG,count(onum) "TOTAL ORDERS" from salespeople join orders using(snum) group by sname;
+
+4) Create a view that shows each salesperson with multiple customers.
+
+Ans: create view v_c as select sname,cname from salespeople join customers using(snum);
